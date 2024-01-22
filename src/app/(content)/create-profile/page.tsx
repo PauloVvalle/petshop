@@ -49,7 +49,7 @@ const CompleteProfile: React.FC = () => {
         }
       }
 
-      const response = await axios.post('http://localhost:3000/api/users', formData, {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/api/user`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
