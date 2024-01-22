@@ -141,17 +141,17 @@ const CompleteProfile: React.FC = () => {
   </div>
 
   <div className="mb-4">
-    <Label htmlFor="user_pet_name" >
+    <Label htmlFor="user_petname" >
       Nome do Pet:
     </Label>
-    <Input {...register('user_pet_name')} id="user_pet_name" className="border rounded w-full py-2 px-3"></Input>
+    <Input {...register('user_petname')} id="user_petname" className="border rounded w-full py-2 px-3"></Input>
   </div>
 
   <div className="mb-4">
-    <Label htmlFor="user_pet_type" >
+    <Label htmlFor="user_pettype" >
       Tipo de Pet:
     </Label>
-    <Input {...register('user_pet_type')} id="user_pet_type" className="border rounded w-full py-2 px-3"></Input>
+    <Input {...register('user_pettype')} id="user_pettype" className="border rounded w-full py-2 px-3"></Input>
   </div>
 
   <div className="mb-4">
