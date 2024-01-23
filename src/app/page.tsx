@@ -4,10 +4,17 @@ import Search from "@/components/Search"
 import { SheetSide } from "@/components/Sheet" 
 import ShowComponent from "@/components/ShowComponent"
 
-export default function Home() {
+interface RootLayoutProps {
+  children: React.ReactNode;
+
+}
+export default function Home({
+  children,
+ 
+}: RootLayoutProps) {
   return (
     <>        
-    <ShowComponent children={undefined} showComponent={true}></ShowComponent>
+    <ShowComponent  showComponent={true}> {children}</ShowComponent>
       <main className="mx-auto max-w-5xl text-2xl gap-2 my-10">
 
       <Search />
