@@ -1,19 +1,16 @@
+import Navbar from "@/components/Navbar";
+import Search from "@/components/Search";
 
-import Search from "@/components/Search"
-import ShowComponent from "@/components/ShowComponent"
-
-export default function Home({
-  children,
- 
-}: React.PropsWithChildren<{}>) {
+const Home: React.FC = () => {
   return (
-    <>        
-    <ShowComponent  showComponent={true}> {children}</ShowComponent>
+    <>
+      <Navbar/>
       <main className="mx-auto max-w-5xl text-2xl gap-2 my-10">
-
-      <Search />
+        <Search />
         <h1>Hello</h1>
       </main>
     </>
-  )
-}
+  );
+};
+
+export default Home;
