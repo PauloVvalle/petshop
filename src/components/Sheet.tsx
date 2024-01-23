@@ -66,7 +66,7 @@ const onLogout = async () => {
               <SheetTitle> {userInfo && userInfo.user && 
               <div className="flex gap-2 items-center ">
               <Avatar> 
-              <AvatarImage src={`${process.env.NEXT_PUBLIC_BACKEND}/imagem` + userInfo.user.user_image}/>
+              <AvatarImage src={`${process.env.NEXT_PUBLIC_BACKEND}/imagem/${userInfo.user.user_image}`}/>
               <AvatarFallback>{userInfo.user.user_name.charAt(0)}</AvatarFallback>
               </Avatar>
               

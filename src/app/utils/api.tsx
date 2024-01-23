@@ -225,7 +225,40 @@ const authUser = async (data: Record<string, unknown>): Promise<ResponseData | f
 //   }
 // }
 
+async function fetchData() {
+  const response = await fetch('http://localhost:3000/admin', {
+    headers: {
+      // Substitua 'username' pelo nome de usuário real
+      username: 'username',
+    },
+  });
+
+  if (response.status === 403) {
+    console.error('Acesso negado. Apenas administradores podem acessar esta página.');
+    return;
+  }
+
+  if (!response.ok) {
+    console.error('Ocorreu um erro ao buscar os dados.');
+    return;
+  }
+
+  // Analise a resposta como JSON
+  const data = await response.json();
+
+  // Acesse a propriedade user_role
+  const userRole = data.userInfo.user_role;
+  console.log(`O papel do usuário é ${userRole}`);
+
+  // Acesse a propriedade user_username
+  const username = data.userInfo.user_username;
+  console.log(`O nome de usuário é ${username}`);
+}
+
+fetchData();
+
+
 
 export {
-  authUser,
+  authUser, fetchData
 };

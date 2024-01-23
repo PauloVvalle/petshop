@@ -24,20 +24,22 @@ type Inputs = {
   user_role: 'user' | 'admin';
   user_phone: string;
   user_image: FileList;
-  user_address: string;
+  user_city: string;
+  user_street: string;
+  user_number: string;
   user_cep: string;
-  user_pet_name: string;
-  user_pet_type: string;
+  user_petname: string;
+  user_pettype: string;
   user_vaccination_date: string;
   [key: string]: string | 'user' | 'admin' | FileList | undefined;
 };
-
 
 const CompleteProfile: React.FC = () => {
   const { register, handleSubmit } = useForm<Inputs>();
   const router = useRouter();
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    console.log(data)
     try {
       let formData = new FormData();
 
@@ -48,8 +50,8 @@ const CompleteProfile: React.FC = () => {
           formData.append(key, data[key][0]);
         }
       }
-
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/api/user`, formData, {
+ 
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/api/users`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -61,6 +63,7 @@ const CompleteProfile: React.FC = () => {
       console.error(error);
     }
   };
+
 
   return (
     <>
@@ -95,49 +98,52 @@ const CompleteProfile: React.FC = () => {
     <Input {...register('user_password')} id="user_password" className="border rounded w-full py-2 px-3" type="password"></Input>
   </div>
 
-  <div className="mb-4">
-    <Label htmlFor="user_role" >
-      Nível de acesso:
-    </Label>
- 
-<Select {...register('user_role')} >
-      <SelectTrigger  >
-        <SelectValue placeholder="Selecione um cargo" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectLabel>Cargos</SelectLabel>
-      <SelectItem value='user'>Usuário</SelectItem>
-      <SelectItem value='admin'>Administrador</SelectItem>
-        </SelectGroup>
-      </SelectContent>
-    </Select>
 
-    {/* <Select {...register('user_role')} className="border rounded w-full py-2 px-3"> */}
-      {/* <SelectItem value='user'>Usuário</SelectItem>
-      <SelectItem value='admin'>Administrador</SelectItem>
-    </Select> */}
-  </div>
+ 
+    <div className="mb-4">
+                <label htmlFor="user_role" className="block text-gray-700">
+                    Nível de acesso:
+                </label>
+
+                <select {...register('user_role')} className="border rounded w-full py-2 px-3">
+                    <option value='user'>Usuário</option>
+                    <option value='admin'>Administrador</option>
+                </select>
+
+            </div>
+
 
   <div className="mb-4">
     <Label htmlFor="user_phone" >
       Telefone:
     </Label>
-    <Input {...register('user_phone')} id="user_phone" className="border rounded w-full py-2 px-3"></Input>
+    <Input type='number' {...register('user_phone')} id="user_phone" className="border rounded w-full py-2 px-3"></Input>
   </div>
 
     <div className="mb-4">
-    <Label htmlFor="user_address" >
+    <Label htmlFor="user_street" >
       Endereço:
     </Label>
-    <Input {...register('user_address')} id="user_address" className="border rounded w-full py-2 px-3"></Input>
+    <Input {...register('user_street')} id="user_street" className="border rounded w-full py-2 px-3"></Input>
+  </div>
+  <div className="mb-4">
+    <Label htmlFor="user_city" >
+      Cidade
+    </Label>
+    <Input {...register('user_city')} id="user_city" className="border rounded w-full py-2 px-3"></Input>
   </div>
 
+  <div className="mb-4">
+    <Label htmlFor="user_number" >
+      Numero:
+    </Label>
+    <Input type='number' {...register('user_number')} id="user_number" className="border rounded w-full py-2 px-3"></Input>
+  </div>
   <div className="mb-4">
     <Label htmlFor="user_cep" >
       CEP:
     </Label>
-    <Input {...register('user_cep')} id="user_cep" className="border rounded w-full py-2 px-3"></Input>
+    <Input type='number' {...register('user_cep')} id="user_cep" className="border rounded w-full py-2 px-3"></Input>
   </div>
 
   <div className="mb-4">
