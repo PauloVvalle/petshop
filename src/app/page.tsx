@@ -4,14 +4,14 @@ import Search from "@/components/Search"
 import { SheetSide } from "@/components/Sheet" 
 import ShowComponent from "@/components/ShowComponent"
 
-interface RootLayoutProps {
+interface Ichildren {
   children: React.ReactNode;
 
 }
 export default function Home({
   children,
  
-}: RootLayoutProps) {
+}: Ichildren) {
   return (
     <>        
     <ShowComponent  showComponent={true}> {children}</ShowComponent>
