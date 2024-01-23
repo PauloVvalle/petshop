@@ -1,17 +1,11 @@
 
-import Navbar from "@/components/Navbar"
 import Search from "@/components/Search"
-import { SheetSide } from "@/components/Sheet" 
 import ShowComponent from "@/components/ShowComponent"
 
-interface Ichildren {
-  children: React.ReactNode;
-
-}
 export default function Home({
   children,
  
-}: Ichildren) {
+}: React.PropsWithChildren<{}>) {
   return (
     <>        
     <ShowComponent  showComponent={true}> {children}</ShowComponent>
