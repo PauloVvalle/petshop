@@ -1,10 +1,11 @@
+"use client"
 import React from "react";
 import AdminNavbar from "@/components/NavBarAdmin";
 import Sidebar from '@/components/sidebar';
 import { CardWithForm } from "@/components/Card";
 import { TabsCreate } from "@/components/TabsCreate";
 
-const Dashboard = () => {
+const ModProduct = () => {
   return (
     <>
       <AdminNavbar className="lg:hidden block" />
@@ -14,6 +15,7 @@ const Dashboard = () => {
             <div className="flex flex-col mx-auto my-auto justify-center items-center">
               {/* <CardWithForm></CardWithForm> */}
               <TabsCreate></TabsCreate>
+              
             </div>
 
             <footer className="bg-gray-200 flex flex-col text-center text-xs text-gray-600 py-3">
@@ -27,4 +29,6 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default ModProduct;
+
+ModProduct

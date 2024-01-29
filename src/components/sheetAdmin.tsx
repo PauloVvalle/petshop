@@ -85,6 +85,12 @@ export function SheetAdmin() {
 
         {isOpen && (
           <Command ref={sidebarRef} className="fixed top-0 left-0 h-screen w-60 max-w-full border shadow-md">
+          <div className="flex justify-around items-center mt-10">
+            <Link href="/">
+            <span className="inline-block font-bold">PetShop</span>
+            </Link>
+            <ModeToggle />
+          </div>
             <div className="flex justify-around items-center mt-10">
             <div className="grid gap-4 py-4">
               <div> {userInfo && userInfo.user && 
@@ -96,7 +102,6 @@ export function SheetAdmin() {
               
                   <h1> {userInfo && `${userInfo.user.user_name.split(" ")[0]} (${userInfo.user.user_role})`}</h1>              </div>}</div>
               </div>
-              <ModeToggle />
             </div>
             <Search className="max-w-48 mt-5" />
             <CommandInput placeholder="Type a command or search..." />
@@ -117,7 +122,9 @@ export function SheetAdmin() {
                 </CommandItem>
                 <CommandItem className="px-5">
                   <RocketIcon className="mr-2 h-4 w-4" />
-
+                  <Link href="/admin">
+                    <span>admin</span>
+                  </Link>
                 </CommandItem>
               </CommandGroup>
               <CommandSeparator />
@@ -135,20 +142,6 @@ export function SheetAdmin() {
               <span>Mail</span>
               </Link>
               <CommandShortcut>⌘B</CommandShortcut>
-            </CommandItem>
-            <CommandItem className="px-5">
-              <GearIcon className="mr-2 h-4 w-4" />
-              <Link href="/">
-              <span>Settings</span>
-              </Link>
-              <CommandShortcut>⌘S</CommandShortcut>
-            </CommandItem>
-            <CommandItem className="px-5">
-              <GearIcon className="mr-2 h-4 w-4" />
-              <Link href="/">
-              <span>Settings</span>
-              </Link>
-              <CommandShortcut>⌘S</CommandShortcut>
             </CommandItem>
             <CommandItem className="px-5">
               <GearIcon className="mr-2 h-4 w-4" />

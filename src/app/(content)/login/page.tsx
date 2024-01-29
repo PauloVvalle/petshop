@@ -5,9 +5,12 @@ import { useRouter } from "next/navigation";
 import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import 'tailwindcss/tailwind.css'
-import { authUser } from '@/app/utils/api'
+import { authUser } from '@/lib/api'
 import Link from 'next/link';
 import { AuthContext, AuthProvider, useAuth } from '@/context/AuthContext';
+import dotenv from 'dotenv';
+import { Button } from '@/components/ui/button';
+dotenv.config(); 
 
 type Inputs = {
   user_username: string;
@@ -51,7 +54,7 @@ const LoginPage = () => {
 
 if (session?.user?.user_name && session?.user?.user_email) {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-gray-200">
                
       <h2>
         {" "}
@@ -80,9 +83,9 @@ if (session?.user?.user_name && session?.user?.user_email) {
   return (
     <>
 
-    <main className="min-h-screen">
+    <main className="min-h-screen flex flex-row items-center justify-center bg-gray-200">
 
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center w-[500px]">
         <div className="bg-white p-8 rounded shadow-lg w-full max-w-md">
           <h1 className="text-2xl font-bold mb-4">Login</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -95,7 +98,7 @@ if (session?.user?.user_name && session?.user?.user_email) {
               <input {...register('user_password')} type='password' className="w-full border rounded py-2 px-3" required/>
             </div>
   
-            <button type="submit"  className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600">Login</button>
+            <Button type="submit" >Login</Button>
             <br></br>
             <br></br>
         <div className='mb-'>
@@ -103,6 +106,25 @@ if (session?.user?.user_name && session?.user?.user_email) {
             </div>
           </form>
         </div>
+      </div>
+    <div className="w-64">
+      <div className='flex flex-col w-[500px] pb-[100px] mt-10 justify-center h-full'>
+        <h2 className='text-center text-2xl font-bold'>
+        Criar uma conta é rápido,
+fácil e gratuito!
+        </h2>
+        <span className='mt-2 text-center items-center text-sm text-gray-500'>
+        Com a sua conta da Petz você tem acesso
+a Ofertas exclusivas, descontos, pode criar
+e gerenciar a sua Assinatura Petz, acompanhar
+os seus pedidos e muito mais!
+        </span>
+        <div className='mt-10 flex flex-row items-center justify-center'>
+        <Button className='max-w-[400px]' asChild>
+      <Link href="/perfil">Criar minha conta</Link>
+    </Button>
+         </div>
+      </div>
       </div>
 
     </main>

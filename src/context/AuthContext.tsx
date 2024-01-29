@@ -33,7 +33,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
         if (typeof window !== 'undefined') {
 
             if (userInfo) {
-                                    console.log('alo')
+
                 localStorage.setItem('userInfo', JSON.stringify(userInfo));
                 
             // } else {

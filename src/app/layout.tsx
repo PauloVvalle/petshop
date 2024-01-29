@@ -6,8 +6,7 @@ import { getServerSession } from "next-auth"
 
 import "./globals.css"
 import { AuthProvider } from "@/context/AuthContext"
-import Navbar from "@/components/Navbar";
-import ShowComponent from '@/components/ShowComponent';
+import { Toaster } from '@/components/ui/sonner';
 
 export const metadata: Metadata = {
   title: "petshop",
@@ -26,7 +25,7 @@ export default async function PaginaLayout({
   const session = await getServerSession()
 
   return (
-    <html lang="en">
+    <html suppressHydrationWarning lang="pt-br">
       <body>
         <AuthProvider>
         <ThemeProvider
@@ -38,7 +37,7 @@ export default async function PaginaLayout({
           <SessionProvider session={session}>
 
             {children}
-
+          <Toaster/>
           </SessionProvider>
         </ThemeProvider>
         </AuthProvider>

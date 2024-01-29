@@ -37,27 +37,29 @@ export function Commands({ className }: { className?: string }) {
           <CommandGroup heading="Admin" >
             <CommandItem className="px-5">
               <CalendarIcon className="mr-2 h-4 w-4" />
-              <Link href="/">
+              <Link href="/admin/create-product">
               <span>Criar produtos</span>
               </Link>
             </CommandItem>
             <CommandItem className="px-5">
               <FaceIcon className="mr-2 h-4 w-4" />
-              <Link href="/">
+              <Link href="/admin/mod-product">
               <span>Modificar produtos</span>
               </Link>
             </CommandItem>
             <CommandItem className="px-5">
-              <RocketIcon className="mr-2 h-4 w-4" />
-            
-            </CommandItem>
+                  <RocketIcon className="mr-2 h-4 w-4" />
+                  <Link href="/admin">
+                    <span>admin</span>
+                  </Link>
+                </CommandItem>
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading="Settings">
             <CommandItem className="px-5">
               <PersonIcon className="mr-2 h-4 w-4" />
-              <Link href="/">
-              <span>Profile</span>
+              <Link href="/admin/perfil">
+              <span>Perfil</span>
               </Link>
               <CommandShortcut>⌘P</CommandShortcut>
             </CommandItem>
@@ -70,7 +72,7 @@ export function Commands({ className }: { className?: string }) {
             </CommandItem>
             <CommandItem className="px-5">
               <GearIcon className="mr-2 h-4 w-4" />
-              <Link href="/">
+              <Link href="/admin/settings">
               <span>Settings</span>
               </Link>
               <CommandShortcut>⌘S</CommandShortcut>

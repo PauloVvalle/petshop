@@ -17,6 +17,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { AuthContext, AuthProvider, useAuth } from '@/context/AuthContext';
 import { useRouter } from "next/navigation";
 import { MenuIcon } from "lucide-react";
+import { ModeToggle } from "./ModeToggle";
 
 
 
@@ -54,7 +55,7 @@ const onLogout = async () => {
         <div className="grid grid-cols-2 gap-2">
       {SHEET_SIDES.map((side) => (
         <Sheet  key={side}>
-          <div className="w-48">
+          <div className="">
           <SheetTrigger asChild>
             <Button size="icon" variant="link">
             <MenuIcon/>
@@ -62,6 +63,7 @@ const onLogout = async () => {
           </SheetTrigger>
           <SheetContent side={side}>
             <SheetHeader>
+            <ModeToggle />
               <div className="grid gap-4 py-4">
               <SheetTitle> {userInfo && userInfo.user && 
               <div className="flex gap-2 items-center ">

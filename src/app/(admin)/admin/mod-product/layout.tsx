@@ -7,10 +7,10 @@ export default function AdminLayout({
 }) {
   return (
     <>
-    
 
-        <div>{children}</div>
 
+
+<div>{children}</div>
 
 
     </>

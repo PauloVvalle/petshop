@@ -7,7 +7,7 @@ export default function RootLayout({
 }) {
   return (
     <>
-        <ShowComponent showComponent={true}>
+        <ShowComponent showComponent={false}>
         <div>{children}</div>
         </ShowComponent>
 
