@@ -33,10 +33,11 @@ export function CarouselSize() {
             <div className="p-1 z-20">
               <Card>
                 <CardContent className="flex items-center justify-center p-6 border-primary-foreground shadow-md">
-                  <img
-                    src="/Home_Desk_1900x390_Refresh_FarmaciaPetz_2023_10.jpg"
-                    className="rounded" />
-                  
+                  <Image
+                    src="/Home_Desk_1900x390_Refresh_FarmaciaPetz_2023_10.jpg" 
+                    width={1000}
+                    height={100}
+                    alt={"home"}                     />
                 </CardContent>
               </Card>
             </div>

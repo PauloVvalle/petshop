@@ -10,7 +10,6 @@ export function Example() {
         }),
       ]}
     >
-      // ...
     </Carousel>
   )
 }

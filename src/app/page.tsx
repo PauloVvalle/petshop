@@ -1,8 +1,6 @@
 import { CarouselSize } from "../components/Carousel_banner";
 import { CarouselPlugin } from "@/components/Carousel_Product";
 import Navbar from "@/components/Navbar";
-import Search from "@/components/Search";
-import SearchList from "@/components/SearchList";
 import { Card } from "@/components/ui/card";
 
 
