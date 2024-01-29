@@ -10,49 +10,44 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import Image from "next/image"
 
 export function CarouselSize() {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   )
-
+  const myLoader = ({ src }: any) => `https://images.petz.com.br${src}`;
   return (
     <Carousel
-    opts={{
-        align: "start",
+      opts={{
+        align: "center", // Altere para "center" para centralizar as imagens
         loop: true,
       }}
-    orientation="horizontal"
+      orientation="horizontal"
       plugins={[plugin.current]}
-      className="relative h-96 w-full"
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
+      className="w-full h-full"
     >
-      <CarouselContent className="w-full h-full">
-        {Array.from({ length: 5 }).map((_, index) => (
-
-          <CarouselItem  key={index} className="pt-1 w-full h-full">
-            <div className="p-1 z-20 ">
-
+      <CarouselContent className="">
+        {Array.from({ length: 3 }).map((_, index) => (
+          <CarouselItem key={index} className="flex justify-center"> {/* Adicione "flex justify-center" para centralizar a imagem */}
+            <div className="p-1 z-20">
               <Card>
-                
-                <CardContent  className="flex h-64 w-full z-0 items-center justify-center p-6">
+                <CardContent className="flex items-center justify-center p-6 border-primary-foreground shadow-md">
                   <img
-                    src="https://love.doghero.com.br/wp-content/uploads/2018/12/golden-retriever-1.png"
-                    alt="asdasda"
-                    className="w-full h-full object-fit"
-                  />
+                    src="/Home_Desk_1900x390_Refresh_FarmaciaPetz_2023_10.jpg"
+                    className="rounded" />
+                  
                 </CardContent>
               </Card>
             </div>
           </CarouselItem>
 
+
         ))}
       </CarouselContent>
-      <CarouselPrevious className="absolute left-[20%] transform -translate-x-full" />
-<CarouselNext className="absolute right-[20%] transform translate-x-full" />
-
-
+      {/* <CarouselPrevious className="absolute left-[20%] transform -translate-x-full" />
+      <CarouselNext className="absolute right-[20%] transform translate-x-full" /> */}
     </Carousel>
   )
 }
+

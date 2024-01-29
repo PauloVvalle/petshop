@@ -27,9 +27,9 @@ const Profile = () => {
             <CriarPerfilForm></CriarPerfilForm>
           </div>
 
-          <div className="overflow-hidden p-8 max-w-[466px] mx-auto ml-4">
-            <h2>Criar uma conta é rápido, fácil e gratuito</h2>
-            <h4>Com a sua conta da Petz você tem acesso a Ofertas
+          <div className="overflow-hidden flex flex-col justify-center p-8 max-w-[466px] mx-auto ml-4 ">
+            <h2 className="font-bold">Criar uma conta é rápido, fácil e gratuito</h2>
+            <h4 className="mt-2">Com a sua conta da PetShop você tem acesso a Ofertas
               exclusivas, descontos, vai gerenciar a sua Assinatura Petz
               pode acompanhar os seus pedidos e muito mais!</h4>
           </div>
